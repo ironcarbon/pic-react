@@ -1,9 +1,7 @@
 import React,{Component} from 'react';
 
 class SearchBar extends Component {
-onChangeHandler(event) {
-    console.log(event.target.value)
-}
+state={ term: ''}
 
     render(){
         return(
@@ -11,7 +9,8 @@ onChangeHandler(event) {
                 <form className="ui form">
                     <div className="field">
                         <label>Image Research</label>
-                        <input type="text" onChange={this.onChangeHandler} />
+                        <input type="text" value={this.state.term} onChange={(e) => this.setState({term:e.target.value})} />
+                        {/*<input type="text" onChange={this.onChangeHandler} /> Uncontrolled component - Event Handler*/}
                         {/*Alternate event handler syntax  <input type="text" onChange={(e) => e.target.value} /> */}
                     </div>
                 </form>
