@@ -4,9 +4,8 @@ class SearchBar extends Component {
 state={ term: ''}
 
 onSubmitHandler=(event)=>{
-
+    this.props.submit(this.state.term)
     event.preventDefault();
-    console.log(this.state.term)
 
 }
 
